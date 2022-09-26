@@ -5,7 +5,6 @@ const app = express()
 
 const route = require('./routes/index')
 
-const newsController = require('NewsController')
 app.use(morgan('combined'))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({
