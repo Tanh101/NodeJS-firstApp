@@ -6,6 +6,7 @@ app.use(morgan('combined'))
 app.use(express.static(path.join(__dirname, 'public')));
 
 const hbs = require('express-handlebars')
+const { Console } = require('console')
 app.engine('hbs', hbs.engine({
   extname: '.hbs'
 }));
@@ -21,6 +22,11 @@ app.get('/news', (req, res) => {
 })
 
 app.get("/search", (req, res) => {
+  res.render('search');
+})
+
+app.post("/search", (req, res) => {
+  // console.log(req.body);
   res.render('search');
 })
 
