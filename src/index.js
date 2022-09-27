@@ -21,10 +21,6 @@ app.engine('hbs', hbs.engine({
 app.set('view engine', 'hbs')
 app.set('views', './src/resources/views')
 
-app.get('/', (req, res) => {
-  res.render('home');
-})
-
 
 route(app);
 
