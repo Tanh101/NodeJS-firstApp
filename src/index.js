@@ -22,8 +22,8 @@ app.engine(
         extname: '.hbs',
     }),
 );
-app.set('view engine', 'hbs');
-app.set('views', './src/resources/views');
+        app.set('view engine', 'hbs');
+            app.set('views', './src/resources/views');
 
 route(app);
 
