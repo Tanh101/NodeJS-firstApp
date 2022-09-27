@@ -8,21 +8,21 @@ const route = require('./routes/index');
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
-  express.urlencoded({
-    extended: true,
-  }),
+    express.urlencoded({
+        extended: true,
+    }),
 );
 
 const hbs = require('express-handlebars');
 const { Console } = require('console');
 
 app.engine(
-  'hbs',
-  hbs.engine({
-    extname: '.hbs',
-  }),
+    'hbs',
+    hbs.engine({
+        extname: '.hbs',
+    }),
 );
-app.set('view engine', 'hbs');
+            app.set('view engine', 'hbs');
 app.set('views', './src/resources/views');
 
 route(app);
