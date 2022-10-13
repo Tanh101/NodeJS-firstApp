@@ -4,6 +4,10 @@ const morgan = require('morgan');
 const app = express();
 
 const route = require('./routes/index');
+const db = require('./config/db')
+
+//Connect DB
+db.connect();
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, 'public')));

@@ -5,7 +5,8 @@ class SiteController {
     Course.find({}, function ( err, courses) {
       if(!err)
         res.json(courses);
-      res.status(400).json({error: 'ERROR'});
+      else
+        res.status(400).json({error: 'ERROR'});
     });
   }
 
