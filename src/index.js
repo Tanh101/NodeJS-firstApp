@@ -1,12 +1,15 @@
 const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
 const app = express();
+const path = require('path');
 
+//see HTTP logger
+const morgan = require('morgan');
+
+//config route for web
 const route = require('./routes/index');
-const db = require('./config/db');
 
 //connect DB
+const db = require('./config/db');
 db.connect();
 
 app.use(morgan('combined'));
