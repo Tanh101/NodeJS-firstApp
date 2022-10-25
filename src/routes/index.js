@@ -6,10 +6,10 @@ function route(app) {
 
     app.use('/', siteRoute);
 
-                app.post('/search', (req, res) => {
-                    console.log(req.body);
-                    res.render('search');
-                });
+    app.post('/search', (req, res) => {
+        console.log(req.body);
+        res.render('search');
+    });
 }
 
 module.exports = route;

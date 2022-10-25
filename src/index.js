@@ -4,6 +4,10 @@ const morgan = require('morgan');
 const app = express();
 
 const route = require('./routes/index');
+const db = require('./config/db');
+
+//connect DB
+db.connect();
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -12,6 +16,7 @@ app.use(
         extended: true,
     }),
 );
+
 
 const hbs = require('express-handlebars');
 const { Console } = require('console');
@@ -22,8 +27,8 @@ app.engine(
         extname: '.hbs',
     }),
 );
-        app.set('view engine', 'hbs');
-            app.set('views', './src/resources/views');
+app.set('view engine', 'hbs');
+app.set('views', './src/resources/views');
 
 route(app);
 
