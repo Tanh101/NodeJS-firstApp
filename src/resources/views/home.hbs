@@ -1,10 +1,17 @@
-<div class="card" style="width: 18rem;margin-top: 40px;">
-    <img src="https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png" class="card-img-top"
-        alt="main image">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="mt-4">
+    <div class="row">
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-course-item" style="width: 18rem;margin-top: 40px;">
+                <img src="{{this.image}}" class="card-img-top"
+                    alt="main image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <a href="#" class="btn btn-primary">View detail</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}   
     </div>
 </div>
