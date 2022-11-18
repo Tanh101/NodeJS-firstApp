@@ -9,9 +9,6 @@
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "publishConfig": {
-    "registry": "http://localhost:8081/repository/npm-private/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tanh101/NodeJS-firstApp.git"
@@ -38,6 +35,7 @@
     "express": "^4.18.1",
     "firstapp": "^2.0.0",
     "mongoose": "^6.6.5",
+    "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
