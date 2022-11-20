@@ -7,6 +7,10 @@ const morgan = require('morgan');
 
 //config route for web
 const route = require('./routes/index');
+const db = require('./config/db')
+
+//Connect DB
+db.connect();
 
 //connect DB
 const db = require('./config/db');
