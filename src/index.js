@@ -1,12 +1,19 @@
 const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
 const app = express();
+const path = require('path');
 
+//see HTTP logger
+const morgan = require('morgan');
+
+//config route for web
 const route = require('./routes/index');
 const db = require('./config/db')
 
 //Connect DB
+db.connect();
+
+//connect DB
+const db = require('./config/db');
 db.connect();
 
 app.use(morgan('combined'));
@@ -17,6 +24,7 @@ app.use(
     }),
 );
 
+
 const hbs = require('express-handlebars');
 const { Console } = require('console');
 
@@ -26,8 +34,8 @@ app.engine(
         extname: '.hbs',
     }),
 );
-        app.set('view engine', 'hbs');
-            app.set('views', './src/resources/views');
+app.set('view engine', 'hbs');
+app.set('views', './src/resources/views');
 
 route(app);
 
